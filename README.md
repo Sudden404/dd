@@ -31,17 +31,19 @@
 Ошибка при вводе формы:
 ![image](https://user-images.githubusercontent.com/90724604/205431344-eff2b0f9-748b-42e4-aae6-73e243f55352.png)
 
- 
+
 Блок схема работы сайта
 ![image](https://user-images.githubusercontent.com/90724604/205431354-bb7cb5f7-4a65-4b00-abe2-182ae2eb4b8a.png)
+
 
 Описание БД
 В лабораторной работе была использована база данных – mysql. Таблица состоит из 3х столбцов:
 1)ID - идентификационный номер пользователя, уникален и выдаётся сервером.
 2)Логин - уникальное имя пользователя, введённое им при регистрации.
 3)Пароль – набор символов введённый пользователем, необходимый для подтверждения, что пользователь владелец аккаунта. На сервере хранится в хешированном виде с солью.
- 
+
 Пример кода для основных сценариев работы
+
 <?php
 include("app/database/db.php");
 
@@ -85,7 +87,6 @@ if(isset($_POST['reg-button'])) {
         $login = '';
     }
 }
-
 //login
 else if(isset($_POST['log-button'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -111,7 +112,6 @@ else if(isset($_POST['log-button'])) {
 else{
     $login = '';
 }
-
 //change password
 if(isset($_POST['pass-button'])) {
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -137,4 +137,3 @@ if(isset($_POST['pass-button'])) {
         }
     }
 }
-
